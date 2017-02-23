@@ -3,6 +3,8 @@ build.bat
 .classpath
 .project
 .eclipse
+.settings
+.DS_Store
 play-morphia.jar
 dist
 target
@@ -12,3 +14,4 @@ lib
 *.iml
 *.eml
 *.ipl
+eclipse
