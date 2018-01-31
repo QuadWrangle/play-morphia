@@ -730,7 +730,7 @@ public final class MorphiaPlugin extends PlayPlugin {
     }
   }
   private static MongoClientOptions readMongoOptions(Properties c) {
-    MongoClientOptions builder = MongoClientOptions.builder().build();
+    MongoClientOptions.Builder builder = MongoClientOptions.builder();
     for (Method method : MongoClientOptions.Builder.class.getMethods()) {
       String property = c.getProperty("morphia.driver." + method.getName());
       if (StringUtils.isEmpty(property))
@@ -753,7 +753,7 @@ public final class MorphiaPlugin extends PlayPlugin {
         error(e, "error setting mongo option " + method.getName());
       }
     }
-    return builder;
+    return builder.build();
   }
 
   public static synchronized void registerGlobalEventHandler(IMorphiaEventHandler handler) {
